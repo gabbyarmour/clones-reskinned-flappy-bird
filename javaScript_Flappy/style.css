@@ -1,0 +1,128 @@
+/*****************************************************
+Title: Flappy Bird
+New Title: Flappy Corn
+Author: Ania Kubow
+Date: 2020
+Code version: 1.0
+Availability: https://github.com/kubowania/flappy-bird; 
+https://www.youtube.com/watch?v=8xPsg6yv7TU&t=3017s
+******************************************************/
+
+/* Note: The following code has been adapted/mostly copied from Ania Kubow's Flappy Bird.
+   Note2: I reskinned Flappy Bird with my own assets. */
+
+body {
+    display: flex;
+}
+
+.game-container {
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    left: 80px;
+}
+
+.border-left {
+    width: 80px;
+    height: 790px;
+    position:  absolute;
+    background-color: white;
+    z-index: +2;
+}
+
+.border-right {
+    width: 80px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    left: 580px;
+}
+
+.border-top {
+    width: 660px;
+    height: 50px;
+    position:  absolute;
+    background-color: white;
+    z-index: +2;
+    top: -50px;
+}
+
+.sky {
+    background-image: url('sea1_pixabay.jpg');
+    width: 500px;
+    height: 580px;
+    position: absolute;
+}
+
+.ground {
+    background-image: url('floorcrystals_pixabay.jpg');
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    top: 580px;
+    z-index: +1;
+}
+
+.bird {
+    background-size: cover;
+    background-image: url('pegahead2.png');
+    position: absolute;
+    width: 80px;
+    height: 45px;
+    left: 220px;
+    bottom: 100px;
+}
+
+.obstacle {
+    background-image: url('unicornhorn2.png');
+    width: 60px;
+    height: 300px;
+    position: absolute;
+}
+
+.topObstacle {
+    background-image: url('unicornhorn2.png');
+    transform: rotate(180deg);
+    width: 60px;
+    height: 300px;
+    position: absolute;
+}
+
+@keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  
+  @-webkit-keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+
+  .ground-container {
+      height: 150px;
+      width: 580px;
+      left: 80px;
+      position:  absolute;
+  }
+  
+  .ground-moving {
+    position: absolute;
+    top: 580px;
+    height: 150px;
+    background-image: url('floorcrystals_pixabay.jpg');
+    background-repeat: repeat-x;
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
+    width: 100%;
+    z-index: +1;
+  }
+
